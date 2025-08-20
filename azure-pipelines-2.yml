@@ -19,13 +19,13 @@ stages:
     - task: Docker@2
       displayName: Login to Docker Hub
       inputs:
-        containerRegistry: 'saiteja8747/testapp'
+        containerRegistry: 'docker-hub'
         command: 'login'
  
     - task: Docker@2
       displayName: Build and Push Docker Image
       inputs:
-        containerRegistry: 'saiteja8747/testapp'
+        containerRegistry: 'docker-hub'
         repository: 'saiteja8747/testapp'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
